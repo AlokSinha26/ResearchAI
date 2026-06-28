@@ -139,3 +139,6 @@ requirements.txt
 ## Built with
 
 Developed iteratively in Cursor, using AI-assisted code generation and debugging throughout — from initial scaffolding through diagnosing environment, dependency, and API-quota issues during testing.
+
+## Live Demo
+Note: this demo runs on Google's Gemini free tier, which has a daily request quota. If the live demo returns an error, it likely means the daily quota has been reached — please try again later, or run the project locally with your own API key (see Setup).
