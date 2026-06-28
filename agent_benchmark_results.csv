@@ -1,0 +1,7 @@
+question,agent_seconds,confidence,num_sources
+What are the main differences between the latest Gemini and GPT model releases?,20.3,high,5
+What is LangGraph and how does it differ from a basic LangChain agent?,16.8,high,5
+What are the current best practices for prompt engineering with tool-calling LLMs?,17.1,high,6
+What is Anthropic's Model Context Protocol (MCP) and why does it matter?,26.6,high,5
+What are the biggest criticisms or limitations of current AI coding assistants?,24.2,high,5
+What's the latest news on AI regulation in the EU or US this year?,FAILED,N/A,0

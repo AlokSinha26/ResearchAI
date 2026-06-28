@@ -1,0 +1,10 @@
+# Environment & secrets
+.env
+
+# Python
+venv/
+__pycache__/
+*.pyc
+
+# Test/scratch files
+payload.json
