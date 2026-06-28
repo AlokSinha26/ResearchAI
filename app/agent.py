@@ -52,10 +52,17 @@ def run_research(query: str) -> ResearchOutput:
     finalize_prompt = (
         "Based on the conversation above, produce a ResearchOutput summary. "
         "List every distinct source you used (web search results, PDFs read, or memory lookups) "
-        "with a short summary of what each contributed, then give your overall synthesis and confidence level."
+        "with a short summary of what each contributed, then give your overall synthesis and confidence level. "
+        "Do not include the query field — it will be set separately."
     )
 
     structured_result = structured_llm.invoke(
         result["messages"] + [("user", finalize_prompt)]
     )
+
+    # Overwrite query with the original question, rather than trusting the model
+    # to correctly identify it from conversation history (it sometimes picks up
+    # the finalize instruction itself instead).
+    structured_result.query = query
+
     return structured_result

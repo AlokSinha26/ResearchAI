@@ -60,11 +60,13 @@ async def research(payload: ResearchRequest):
         finalize_prompt = (
             "Based on the conversation above, produce a ResearchOutput summary. "
             "List every distinct source you used with a short summary, "
-            "then give your overall synthesis and confidence level."
+            "then give your overall synthesis and confidence level. "
+            "Do not include the query field — it will be set separately."
         )
         structured_result = structured_llm.invoke(
             final_state["messages"] + [("user", finalize_prompt)]
         )
+        structured_result.query = query  # use the original question, not the model's guess
 
         yield f"data: {json.dumps({'type': 'final', 'content': structured_result.model_dump()})}\n\n"
 
